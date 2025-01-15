@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .column {
+            margin-left: 250px;
+            display: flex;
+            flex-wrap: wrap;/* Should be removed. Only for demonstration */
+        }
+
+        .row{
+            padding-left: 10px;
+            display: block;
+            width: 80.333%;
+        }
+
+    </style>
+</head>
+<body>
+  <h2 style="text-align: center">Electronics shop items</h2>
+
+<div class="row" style="text-align: center">
+  <div  class="column" style="background-color: lightgrey; border-radius: 5px;text-align: center">
+        <h2 th:each="item : ${products}">
+            <span th:text="${item.getName()}" style="color: cornflowerblue; font-size: 30px;"></span><br>
+            <span th:text="${item.getDescription()}" style="font-size: 18px; margin-top: 10px;" ></span><br>
+            <span th:text="${item.getPrice()}" style="color:green; font-size: 22px;"></span> <span style="color: brown; font-size: 30px;">$</span><br><br>
+            <a href="#" style="background-color: green; color:white; border-radius: 4px; text-decoration: none; font-size: 18px;padding: 7px;">DETAILS</a>
+
+        </h2>
+
+    </div>
+</div>
+
+</body>
+</html>
